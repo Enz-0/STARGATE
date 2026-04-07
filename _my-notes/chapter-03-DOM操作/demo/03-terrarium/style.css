@@ -1,0 +1,121 @@
+/* STEP2-DONE */
+/* 💡 第4步实操区 - 虚拟植物盆景样式 */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.terrarium {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.jar {
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 8px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px 50px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        inset 0 0 50px rgba(255,255,255,0.5),
+        0 10px 30px rgba(0,0,0,0.3);
+}
+
+.soil {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, #8B4513, #5D3A1A);
+    border-radius: 0 0 12px 12px;
+}
+
+/* 💡 第4步实操区：植物基础样式 */
+.plant {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+    font-size: 40px;
+    user-select: none;
+}
+
+.plant:hover {
+    transform: scale(1.2);
+}
+
+/* 💡 第4步实操区：不同植物的样式类 */
+.plant-succulent {
+    /* 多肉植物样式 */
+}
+
+.plant-flower {
+    /* 花朵样式 */
+}
+
+.plant-fern {
+    /* 蕨类样式 */
+}
+
+.plant-cactus {
+    /* 仙人掌样式 */
+}
+
+/* 💡 第4步实操区：浇水后的样式 */
+.plant.watered {
+    filter: brightness(1.2) saturate(1.3);
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.controls h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #667eea;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#plant-count {
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    display: inline-block;
+}

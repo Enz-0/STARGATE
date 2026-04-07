@@ -1,0 +1,168 @@
+/**
+ * 第一个网页的样式文件
+ * 对应：../../03-前端基础.md
+ */
+
+/* 页面基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 页面主体 */
+body {
+    /* 字体设置 */
+    font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* 渐变背景 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* 最小高度为视口高度 */
+    min-height: 100vh;
+    
+    /* 内容居中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* 内边距 */
+    padding: 20px;
+}
+
+/* 主容器 */
+.container {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* 主标题 */
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* 介绍文字 */
+.intro {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* 信息卡片 */
+.card {
+    background: #f8f9fa;
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.card h2 {
+    color: #333;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 功能列表区 */
+.features {
+    margin: 30px 0;
+    text-align: left;
+}
+
+.features h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-size: 1em;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+/* 交互区 */
+.interactive-area {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #eee;
+}
+
+/* 按钮样式 */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* 消息文字 */
+#message {
+    margin-top: 15px;
+    font-size: 1em;
+    min-height: 24px;
+}
+
+/* 页脚 */
+footer {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+/* 响应式设计：适配小屏幕 */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .intro {
+        font-size: 1em;
+    }
+}
+
+/* STEP2-DONE */

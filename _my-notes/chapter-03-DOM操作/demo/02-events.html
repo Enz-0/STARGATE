@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件监听练习</title>
+    <!-- STEP2-DONE -->
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .box { 
+            width: 200px; 
+            height: 200px; 
+            background: #3498db; 
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        .box:hover { transform: scale(1.05); }
+        .box.active { background: #e74c3c; }
+        input { padding: 10px; margin: 10px 0; width: 300px; }
+        .log { 
+            background: #f5f5f5; 
+            padding: 15px; 
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .log-entry { margin: 5px 0; padding: 5px; background: white; }
+    </style>
+</head>
+<body>
+    <h1>🎮 事件监听练习</h1>
+    
+    <div class="box" id="click-box">
+        点击我！
+    </div>
+
+    <div>
+        <input type="text" id="text-input" placeholder="输入文字试试...">
+        <p>输入内容: <span id="display-text"></span></p>
+    </div>
+
+    <button id="clear-btn">清除日志</button>
+
+    <div class="log" id="event-log">
+        <strong>事件日志:</strong>
+    </div>
+
+    <script>
+        // STEP2-DONE
+        // 💡 第4步实操区 - 事件监听练习
+
+        const box = document.querySelector('#click-box');
+        const input = document.querySelector('#text-input');
+        const display = document.querySelector('#display-text');
+        const log = document.querySelector('#event-log');
+        const clearBtn = document.querySelector('#clear-btn');
+
+        function addLog(message) {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+            log.appendChild(entry);
+        }
+
+        // 💡 第4步实操区：为 box 添加 click 事件监听
+        // 点击时切换 active 类，并记录日志
+        
+
+        // 💡 第4步实操区：为 box 添加 mouseenter 和 mouseleave 事件
+        // 鼠标移入和移出时改变文字并记录日志
+        
+
+        // 💡 第4步实操区：为 input 添加 input 事件
+        // 实时显示输入内容到 display 元素
+        
+
+        // 清除日志
+        clearBtn.addEventListener('click', () => {
+            const entries = log.querySelectorAll('.log-entry');
+            entries.forEach(e => e.remove());
+        });
+    </script>
+</body>
+</html>

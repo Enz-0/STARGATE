@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器与游戏逻辑</title>
+    <!-- STEP2-DONE -->
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px;
+            background: #0f0f23;
+            color: white;
+            text-align: center;
+        }
+        .timer {
+            font-size: 72px;
+            font-weight: bold;
+            color: #00ff88;
+            margin: 30px 0;
+        }
+        .timer.warning { color: #ffaa00; }
+        .timer.danger { color: #ff4444; }
+        .word-display {
+            font-size: 36px;
+            letter-spacing: 5px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #1a1a3e;
+            border-radius: 10px;
+        }
+        input {
+            font-size: 24px;
+            padding: 15px;
+            width: 300px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            text-align: center;
+        }
+        input:focus {
+            outline: none;
+            border-color: #00ff88;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            background: #1a1a3e;
+            padding: 15px 30px;
+            border-radius: 10px;
+        }
+        .stat-value { font-size: 32px; color: #00ff88; }
+        button {
+            padding: 15px 40px;
+            font-size: 20px;
+            background: #00ff88;
+            color: #0f0f23;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background: #00cc6a; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>⏱️ 计时器与游戏逻辑</h1>
+
+    <div id="start-screen">
+        <p>在60秒内输入尽可能多的单词！</p>
+        <button id="start-btn">开始游戏</button>
+    </div>
+
+    <div id="game-screen" class="hidden">
+        <div class="timer" id="timer">60</div>
+        
+        <div class="word-display" id="word-display">READY</div>
+        
+        <input type="text" id="word-input" placeholder="输入单词..." autocomplete="off">
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div>得分</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat-box">
+                <div>正确</div>
+                <div class="stat-value" id="correct">0</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-over-screen" class="hidden">
+        <h2>游戏结束!</h2>
+        <p>最终得分: <span id="final-score">0</span></p>
+        <button id="restart-btn">重新开始</button>
+    </div>
+
+    <script>
+        // STEP2-DONE
+        // 💡 第4步实操区 - 计时器与游戏逻辑
+
+        const words = ['apple', 'code', 'javascript', 'html', 'css', 'web', 'game', 'type'];
+        
+        let timeLeft = 60;
+        let score = 0;
+        let correctCount = 0;
+        let timerId = null;
+        let currentWord = '';
+        let isPlaying = false;
+
+        // DOM 元素
+        const startScreen = document.querySelector('#start-screen');
+        const gameScreen = document.querySelector('#game-screen');
+        const gameOverScreen = document.querySelector('#game-over-screen');
+        const timerDisplay = document.querySelector('#timer');
+        const wordDisplay = document.querySelector('#word-display');
+        const wordInput = document.querySelector('#word-input');
+        const scoreDisplay = document.querySelector('#score');
+        const correctDisplay = document.querySelector('#correct');
+
+        // 💡 第4步实操区：获取随机单词
+        function getRandomWord() {
+            
+        }
+
+        // 💡 第4步实操区：开始游戏函数
+        // 1. 重置分数和时间
+        // 2. 显示第一个单词
+        // 3. 启动计时器
+        function startGame() {
+            
+        }
+
+        // 💡 第4步实操区：计时器函数
+        // 使用 setInterval，每秒更新时间
+        // 时间少于10秒时改变颜色
+        function startTimer() {
+            
+        }
+
+        // 💡 第4步实操区：检查输入
+        function checkInput() {
+            
+        }
+
+        // 💡 第4步实操区：结束游戏
+        function endGame() {
+            
+        }
+
+        // 事件监听
+        document.querySelector('#start-btn').addEventListener('click', startGame);
+        document.querySelector('#restart-btn').addEventListener('click', startGame);
+        wordInput.addEventListener('input', checkInput);
+    </script>
+</body>
+</html>

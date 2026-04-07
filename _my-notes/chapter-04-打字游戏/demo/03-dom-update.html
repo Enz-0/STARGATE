@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM更新练习</title>
+    <!-- STEP2-DONE -->
+    <style>
+        body { 
+            font-family: 'Courier New', monospace; 
+            padding: 20px;
+            background: #2d2d2d;
+            color: #f8f8f2;
+        }
+        .word-box {
+            font-size: 48px;
+            text-align: center;
+            padding: 40px;
+            background: #383838;
+            border-radius: 10px;
+            margin: 30px 0;
+            letter-spacing: 8px;
+        }
+        .char {
+            display: inline-block;
+            padding: 5px;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+        .char.correct { 
+            background: #50fa7b; 
+            color: #282a36;
+        }
+        .char.wrong { 
+            background: #ff5555; 
+        }
+        .char.pending {
+            color: #6272a4;
+        }
+        .char.current {
+            border-bottom: 3px solid #8be9fd;
+        }
+        input {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #6272a4;
+            border-radius: 8px;
+            background: #383838;
+            color: #f8f8f2;
+        }
+        input:focus {
+            outline: none;
+            border-color: #8be9fd;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #383838;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #50fa7b, #8be9fd);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .feedback {
+            text-align: center;
+            font-size: 24px;
+            height: 40px;
+        }
+        .feedback.success { color: #50fa7b; }
+        .feedback.error { color: #ff5555; }
+    </style>
+</head>
+<body>
+    <h1>🎯 DOM更新练习 - 实时高亮</h1>
+    
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <div class="word-box" id="word-display">
+        <!-- 字符将通过JS动态生成 -->
+    </div>
+
+    <input type="text" id="type-input" placeholder="开始输入..." autocomplete="off">
+
+    <div class="feedback" id="feedback"></div>
+
+    <script>
+        // STEP2-DONE
+        // 💡 第4步实操区 - DOM更新练习
+
+        const words = ['HELLO', 'WORLD', 'JAVASCRIPT', 'CODING', 'PRACTICE'];
+        let currentWord = words[0];
+        
+        const wordDisplay = document.querySelector('#word-display');
+        const typeInput = document.querySelector('#type-input');
+        const progress = document.querySelector('#progress');
+        const feedback = document.querySelector('#feedback');
+
+        // 💡 第4步实操区：初始化显示单词
+        // 将每个字符包装在 span 中，添加 char 和 pending 类
+        function initWordDisplay(word) {
+            
+        }
+
+        // 💡 第4步实操区：更新高亮显示
+        // 1. 获取已输入的内容
+        // 2. 遍历每个字符，比较是否正确
+        // 3. 添加 correct/wrong/current 类
+        // 4. 更新进度条
+        function updateHighlight() {
+            
+        }
+
+        // 💡 第4步实操区：完成单词处理
+        // 显示成功消息，切换到下一个单词
+        function wordComplete() {
+            
+        }
+
+        // 初始化
+        initWordDisplay(currentWord);
+
+        // 💡 第4步实操区：监听输入事件
+        typeInput.addEventListener('input', () => {
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器 API 练习</title>
+    <!-- STEP2-DONE -->
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 { color: #333; border-bottom: 2px solid #4285f4; padding-bottom: 10px; }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e8eaed;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-primary { background: #4285f4; color: white; }
+        .btn-success { background: #34a853; color: white; }
+        .btn-warning { background: #fbbc04; color: black; }
+        .btn-danger { background: #ea4335; color: white; }
+        button:hover { opacity: 0.9; }
+        .output {
+            background: #202124;
+            color: #81c995;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            min-height: 60px;
+            font-family: 'Consolas', monospace;
+        }
+        .storage-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: #f8f9fa;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 浏览器 API 练习</h1>
+        
+        <div class="section">
+            <h2>Tabs API</h2>
+            <p>模拟浏览器标签页操作</p>
+            
+            <div class="code-block" id="tabs-code">
+// 💡 第4步实操区：实现获取当前标签信息的代码
+chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    // 你的代码
+});
+            </div>
+            
+            <button class="btn-primary" onclick="getCurrentTab()">获取当前标签</button>
+            <button class="btn-success" onclick="createNewTab()">创建新标签</button>
+            <div class="output" id="tabs-output">点击按钮查看结果...</div>
+        </div>
+
+        <div class="section">
+            <h2>Storage API</h2>
+            <p>模拟扩展数据存储</p>
+            
+            <div style="display: flex; gap: 10px; margin: 10px 0;">
+                <input type="text" id="storage-key" placeholder="键名" style="flex: 1; padding: 10px;">
+                <input type="text" id="storage-value" placeholder="值" style="flex: 1; padding: 10px;">
+            </div>
+            
+            <button class="btn-success" onclick="saveData()">保存数据</button>
+            <button class="btn-primary" onclick="getData()">读取数据</button>
+            <button class="btn-warning" onclick="getAllData()">读取全部</button>
+            <button class="btn-danger" onclick="clearStorage()">清空存储</button>
+            
+            <div id="storage-list" style="margin-top: 15px;"></div>
+            <div class="output" id="storage-output"></div>
+        </div>
+    </div>
+
+    <script>
+        // STEP2-DONE
+        // 💡 第4步实操区 - 浏览器 API 练习
+
+        // 模拟标签数据
+        const mockTabs = [
+            { id: 1, title: 'Google', url: 'https://google.com', active: false },
+            { id: 2, title: 'GitHub', url: 'https://github.com', active: true },
+            { id: 3, title: '文档', url: 'https://docs.example.com', active: false }
+        ];
+
+        // 模拟存储
+        let mockStorage = {
+            theme: 'dark',
+            count: 42
+        };
+
+        // 💡 第4步实操区：实现获取当前标签
+        function getCurrentTab() {
+            const output = document.querySelector('#tabs-output');
+            // 模拟 chrome.tabs.query
+            
+            
+        }
+
+        // 💡 第4步实操区：实现创建新标签
+        function createNewTab() {
+            const output = document.querySelector('#tabs-output');
+            // 模拟 chrome.tabs.create
+            
+            
+        }
+
+        // 💡 第4步实操区：实现保存数据到 storage
+        function saveData() {
+            const key = document.querySelector('#storage-key').value;
+            const value = document.querySelector('#storage-value').value;
+            // 模拟 chrome.storage.local.set
+            
+            
+        }
+
+        // 💡 第4步实操区：实现从 storage 读取数据
+        function getData() {
+            const key = document.querySelector('#storage-key').value;
+            // 模拟 chrome.storage.local.get
+            
+            
+        }
+
+        // 💡 第4步实操区：实现读取所有数据
+        function getAllData() {
+            // 模拟读取全部 storage 数据
+            
+            
+        }
+
+        // 💡 第4步实操区：实现清空 storage
+        function clearStorage() {
+            // 模拟 chrome.storage.local.clear
+            
+            
+        }
+
+        // 初始化显示
+        getAllData();
+    </script>
+</body>
+</html>

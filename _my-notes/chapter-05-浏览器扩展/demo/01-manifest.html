@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展架构练习 - manifest.json</title>
+    <!-- STEP2-DONE -->
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .editor {
+            background: #252526;
+            border: 1px solid #3e3e42;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .editor-header {
+            background: #2d2d30;
+            padding: 10px 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .tab {
+            padding: 5px 15px;
+            background: #1e1e1e;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .tab.active { background: #007acc; color: white; }
+        .editor-content {
+            padding: 20px;
+            font-family: 'Consolas', monospace;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+        .key { color: #9cdcfe; }
+        .string { color: #ce9178; }
+        .number { color: #b5cea8; }
+        .boolean { color: #569cd6; }
+        .task {
+            background: #252526;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #007acc;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover { background: #005f9e; }
+    </style>
+</head>
+<body>
+    <h1>📦 扩展架构练习</h1>
+    
+    <div class="editor">
+        <div class="editor-header">
+            <span class="tab active">manifest.json</span>
+        </div>
+        <div class="editor-content" id="manifest-display">{
+    <span class="key">"manifest_version"</span>: <span class="number">3</span>,
+    <span class="key">"name"</span>: <span class="string">"颜色拾取器"</span>,
+    <span class="key">"version"</span>: <span class="string">"1.0.0"</span>,
+    <span class="key">"description"</span>: <span class="string">"拾取网页上的颜色"</span>
+    <span class="comment">// 💡 第4步实操区：添加权限、action、background 配置</span>
+}</div>
+    </div>
+
+    <div class="task">
+        <h3>📝 任务：</h3>
+        <p>1. 添加 permissions 字段（storage, activeTab）</p>
+        <p>2. 添加 action 字段配置 popup.html</p>
+        <p>3. 添加 background service_worker</p>
+    </div>
+
+    <div id="validation-result"></div>
+
+    <script>
+        // STEP2-DONE
+        // 💡 第4步实操区 - manifest.json 配置
+
+        const manifest = {
+            manifest_version: 3,
+            name: "颜色拾取器",
+            version: "1.0.0",
+            description: "拾取网页上的颜色"
+            // 💡 第4步实操区：在这里添加缺失的字段
+            
+        };
+
+        // 💡 第4步实操区：验证 manifest 是否完整
+        function validateManifest() {
+            const errors = [];
+            
+            // 检查必要的字段
+            
+            
+            return errors;
+        }
+
+        // 💡 第4步实操区：渲染 manifest 为 HTML
+        function renderManifest() {
+            
+        }
+    </script>
+</body>
+</html>

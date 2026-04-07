@@ -1,0 +1,95 @@
+<!--
+  第一个网页示例
+  对应：../../03-前端基础.md
+  
+  运行方式：
+  1. 在 VS Code 中右键此文件 → "Open with Live Server"
+  2. 或直接用浏览器打开此文件
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 字符编码声明 -->
+    <meta charset="UTF-8">
+    
+    <!-- 视口设置，适配移动设备 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 页面标题（显示在浏览器标签） -->
+    <title>我的第一个网页</title>
+    
+    <!-- 引入外部 CSS 文件 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 页面主容器 -->
+    <div class="container">
+        
+        <!-- 页面标题 -->
+        <h1>🎉 Hello World!</h1>
+        
+        <!-- 副标题/介绍 -->
+        <p class="intro">
+            欢迎来到 Web 开发的世界！<br>
+            这是我用 HTML 和 CSS 创建的第一个页面。
+        </p>
+        
+        <!-- TODO-第4步：尝试修改这里 -->
+        <!-- 任务1：修改下方文字内容 -->
+        <div class="card">
+            <h2>关于我</h2>
+            <p>我正在学习 Web 开发，这是我的练习作品。</p>
+        </div>
+        
+        <!-- 功能展示区 -->
+        <div class="features">
+            <h3>已掌握的技能：</h3>
+            <ul>
+                <li>✅ HTML 基础结构</li>
+                <li>✅ CSS 样式设置</li>
+                <!-- TODO-第4步：尝试修改这里 -->
+                <!-- 任务2：在这里添加一个新的 li 项目 -->
+            </ul>
+        </div>
+        
+        <!-- 交互按钮区 -->
+        <div class="interactive-area">
+            <button id="clickBtn" class="btn-primary">点击我！</button>
+            <p id="message"></p>
+        </div>
+        
+    </div>
+    
+    <!-- 页面底部信息 -->
+    <footer>
+        <p>创建日期：<span id="date"></span></p>
+    </footer>
+
+    <!-- JavaScript 代码区 -->
+    <script>
+        // 显示当前日期
+        document.getElementById('date').textContent = new Date().toLocaleDateString('zh-CN');
+        
+        // 按钮点击事件
+        document.getElementById('clickBtn').addEventListener('click', function() {
+            const msg = document.getElementById('message');
+            msg.textContent = '🎊 恭喜你成功运行了第一个网页！';
+            msg.style.color = '#667eea';
+            msg.style.fontWeight = 'bold';
+        });
+        
+        // 第4步：在此添加JS实验代码
+        // ============================================
+        // 实验1：添加一个新的按钮，点击时改变背景颜色
+        // 
+        // 实验2：在控制台输出 "Hello from JavaScript!"
+        // console.log("Hello from JavaScript!");
+        //
+        // 实验3：获取页面上所有 li 元素，并计数
+        // const items = document.querySelectorAll('li');
+        // console.log('列表项数量：', items.length);
+        // ============================================
+    </script>
+</body>
+</html>
+<!-- STEP2-DONE -->

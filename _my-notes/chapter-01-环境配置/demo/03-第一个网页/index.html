@@ -1,0 +1,36 @@
+<!--
+  第一个网页示例
+  对应：../../03-HTMLCSS初识.md
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个网页</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Hello World!</h1>
+        <p>欢迎来到 Web 开发的世界！</p>
+        
+        <!-- 💡 第4步实操区：尝试修改这里 -->
+        <div class="card">
+            <h2>关于我</h2>
+            <p>我正在学习 Web 开发。</p>
+        </div>
+        
+        <button id="btn">点击我</button>
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        // 💡 第4步实操区：在此添加JS实验代码
+        document.getElementById('btn').addEventListener('click', function() {
+            document.getElementById('msg').textContent = 'Hello!';
+        });
+    </script>
+</body>
+</html>
+<!-- STEP2-DONE -->

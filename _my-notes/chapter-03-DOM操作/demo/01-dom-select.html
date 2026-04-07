@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 选择练习</title>
+    <!-- STEP2-DONE -->
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { border: 2px solid #ccc; padding: 15px; margin: 10px 0; }
+        .item { padding: 10px; margin: 5px; background: #f0f0f0; }
+        .highlight { background: yellow; border: 2px solid orange; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>🎯 DOM 选择器练习</h1>
+    
+    <div id="main-container" class="container">
+        <h2 id="title">这是标题</h2>
+        <p class="description">这是一段描述文字</p>
+        <ul class="list">
+            <li class="item" data-id="1">项目 1</li>
+            <li class="item" data-id="2">项目 2</li>
+            <li class="item" data-id="3">项目 3</li>
+        </ul>
+    </div>
+
+    <div class="buttons">
+        <button id="btn-id">通过 ID 选择</button>
+        <button id="btn-class">通过 Class 选择</button>
+        <button id="btn-query">使用 querySelectorAll</button>
+        <button id="btn-reset">重置样式</button>
+    </div>
+
+    <div id="output" style="margin-top: 20px; padding: 10px; background: #e8f4f8;"></div>
+
+    <script>
+        // 💡 第4步实操区 - DOM 选择练习
+
+        const output = document.querySelector('#output');
+
+        // 通过 ID 选择
+        document.querySelector('#btn-id').addEventListener('click', () => {
+            // 💡 第4步实操区：使用 getElementById 或 querySelector 选择标题
+            
+            
+        });
+
+        // 通过 Class 选择
+        document.querySelector('#btn-class').addEventListener('click', () => {
+            // 💡 第4步实操区：使用 getElementsByClassName 或 querySelectorAll 选择所有 item
+            
+            
+        });
+
+        // 使用 querySelectorAll
+        document.querySelector('#btn-query').addEventListener('click', () => {
+            // 💡 第4步实操区：选择所有 data-id 属性的元素
+            
+            
+        });
+
+        // 重置
+        document.querySelector('#btn-reset').addEventListener('click', () => {
+            document.querySelectorAll('.item').forEach(item => {
+                item.classList.remove('highlight');
+            });
+            output.textContent = '';
+        });
+    </script>
+</body>
+</html>

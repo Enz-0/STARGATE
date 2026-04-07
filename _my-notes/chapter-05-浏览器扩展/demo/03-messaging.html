@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>脚本通信练习</title>
+    <!-- STEP2-DONE -->
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px;
+            background: #0d1117;
+            color: #c9d1d9;
+        }
+        .architecture {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            padding: 20px;
+            background: #161b22;
+            border-radius: 10px;
+        }
+        .component {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #30363d;
+            border-radius: 10px;
+            width: 200px;
+        }
+        .component.active {
+            border-color: #58a6ff;
+            background: rgba(88, 166, 255, 0.1);
+        }
+        .component-icon { font-size: 48px; margin-bottom: 10px; }
+        .message-flow {
+            margin: 30px 0;
+            padding: 20px;
+            background: #161b22;
+            border-radius: 10px;
+        }
+        .message {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin: 10px 0;
+            background: #21262d;
+            border-radius: 8px;
+            border-left: 4px solid #58a6ff;
+        }
+        .message.sent { border-left-color: #238636; }
+        .message.received { border-left-color: #f0883e; }
+        .arrow { margin: 0 15px; color: #8b949e; }
+        button {
+            padding: 12px 24px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #238636;
+            color: white;
+        }
+        button:hover { background: #2ea043; }
+        .code-area {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+        }
+        .log {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .log-entry { 
+            padding: 5px 0; 
+            border-bottom: 1px solid #21262d;
+            font-family: monospace;
+        }
+        .log-entry:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <h1>📡 脚本通信练习</h1>
+    
+    <div class="architecture">
+        <div class="component" id="popup-component">
+            <div class="component-icon">📱</div>
+            <div>Popup</div>
+        </div>
+        <div class="component" id="bg-component">
+            <div class="component-icon">⚙️</div>
+            <div>Background</div>
+        </div>
+        <div class="component" id="content-component">
+            <div class="component-icon">🌐</div>
+            <div>Content Script</div>
+        </div>
+    </div>
+
+    <div class="message-flow">
+        <h3>消息发送测试：</h3>
+        <button onclick="sendToContent()">Popup → Content Script</button>
+        <button onclick="sendToBackground()">Content → Background</button>
+        <button onclick="broadcastMessage()">广播消息</button>
+        <button onclick="clearLog()">清除日志</button>
+    </div>
+
+    <div class="code-area">
+        <div>// 💡 第4步实操区：实现消息发送函数</div>
+        <div>chrome.tabs.sendMessage(tabId, { action: 'doSomething' });</div>
+        <div>chrome.runtime.sendMessage({ type: 'hello' });</div>
+    </div>
+
+    <div class="log" id="message-log">
+        <strong>通信日志：</strong>
+    </div>
+
+    <script>
+        // STEP2-DONE
+        // 💡 第4步实操区 - 脚本通信练习
+
+        const messageLog = document.querySelector('#message-log');
+        let messageId = 0;
+
+        // 模拟扩展环境
+        const mockExtension = {
+            popup: { name: 'Popup' },
+            background: { name: 'Background' },
+            content: { name: 'Content Script' }
+        };
+
+        // 💡 第4步实操区：模拟发送消息到 Content Script
+        function sendToContent() {
+            // 1. 高亮组件
+            highlightComponent('popup-component');
+            highlightComponent('content-component');
+            
+            // 2. 构建消息
+            const message = {
+                id: ++messageId,
+                from: 'Popup',
+                to: 'Content Script',
+                action: 'changeBackground',
+                data: { color: '#58a6ff' }
+            };
+            
+            // 3. 模拟发送和响应
+            
+            
+            // 4. 记录日志
+            logMessage('发送', message);
+            
+            // 5. 模拟响应
+            setTimeout(() => {
+                const response = { id: messageId, result: 'success' };
+                logMessage('响应', { ...message, ...response, direction: 'response' });
+            }, 500);
+        }
+
+        // 💡 第4步实操区：模拟发送消息到 Background
+        function sendToBackground() {
+            
+            
+        }
+
+        // 💡 第4步实操区：实现广播消息
+        function broadcastMessage() {
+            // 向所有组件发送广播消息
+            
+            
+        }
+
+        // 辅助函数
+        function highlightComponent(id) {
+            const comp = document.querySelector(`#${id}`);
+            comp.classList.add('active');
+            setTimeout(() => comp.classList.remove('active'), 1000);
+        }
+
+        function logMessage(type, data) {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${type}: ${JSON.stringify(data)}`;
+            messageLog.appendChild(entry);
+            messageLog.scrollTop = messageLog.scrollHeight;
+        }
+
+        function clearLog() {
+            messageLog.innerHTML = '<strong>通信日志：</strong>';
+        }
+
+        // 💡 第4步实操区：模拟消息监听
+        // 当收到消息时的处理
+        function onMessageReceived(message, sender) {
+            
+        }
+    </script>
+</body>
+</html>

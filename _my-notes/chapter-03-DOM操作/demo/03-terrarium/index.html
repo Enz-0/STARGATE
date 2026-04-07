@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚拟植物盆景</title>
+    <!-- STEP2-DONE -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🌱 虚拟植物盆景</h1>
+    
+    <div class="terrarium">
+        <div class="jar">
+            <div class="soil"></div>
+            <div id="plants-container">
+                <!-- 植物将通过 JS 动态添加 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <h3>添加植物:</h3>
+        <button data-plant="succulent">🌵 多肉</button>
+        <button data-plant="flower">🌸 花朵</button>
+        <button data-plant="fern">🌿 蕨类</button>
+        <button data-plant="cactus">🌵 仙人掌</button>
+    </div>
+
+    <div class="controls">
+        <h3>操作:</h3>
+        <button id="clear-all">清空</button>
+        <button id="water-plants">浇水 💧</button>
+    </div>
+
+    <div id="plant-count">植物数量: 0</div>
+
+    <script>
+        // STEP2-DONE
+        // 💡 第4步实操区 - 虚拟植物盆景
+
+        const plantsContainer = document.querySelector('#plants-container');
+        const countDisplay = document.querySelector('#plant-count');
+        let plantCount = 0;
+
+        // 💡 第4步实操区：创建植物的函数
+        function createPlant(type) {
+            // 1. 使用 createElement 创建 div
+            // 2. 添加 classList: 'plant' 和对应的类型类
+            // 3. 设置随机位置 (left 和 bottom)
+            // 4. 添加到 plantsContainer
+            // 5. 更新计数
+            
+            
+        }
+
+        // 💡 第4步实操区：为植物按钮添加事件监听
+        // 点击时根据 data-plant 属性创建对应植物
+        
+
+        // 💡 第4步实操区：清空功能
+        // 移除所有植物，重置计数
+        document.querySelector('#clear-all').addEventListener('click', () => {
+            
+        });
+
+        // 💡 第4步实操区：浇水功能
+        // 为所有植物添加 "watered" 类，改变样式
+        document.querySelector('#water-plants').addEventListener('click', () => {
+            
+        });
+    </script>
+</body>
+</html>
